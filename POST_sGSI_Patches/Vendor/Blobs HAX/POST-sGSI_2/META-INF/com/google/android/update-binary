@@ -112,6 +112,11 @@ then
     echo "ro.boot.vendor.overlay.theme=com.google.android.theme.pixel" >> /vendor/build.prop
 fi
 
+if ! grep -Fxq "sys.use_fifo_ui=1" /vendor/build.prop
+then
+    echo "sys.use_fifo_ui=1" >> /vendor/build.prop
+fi
+
 #WIFI
 if ! grep -Fxq "android.hardware.wifi.hostapd" /vendor/manifest.xml
 then
