@@ -117,6 +117,14 @@ then
     echo "sys.use_fifo_ui=1" >> /vendor/build.prop
 fi
 
+* Enable GPU 
+if ( getprop ro.vendor.product.device | grep -Fxq '(riva,rolex)' );then
+    GET_XIAOMI=1
+else
+    if [ -n "$GET_XIAOMI" ];then
+    echo "debug.hwui.profile=true" >> /vendor/build.prop
+fi
+
 #WIFI
 if ! grep -Fxq "android.hardware.wifi.hostapd" /vendor/manifest.xml
 then
