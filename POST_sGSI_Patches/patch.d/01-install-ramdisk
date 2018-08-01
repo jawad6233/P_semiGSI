@@ -1,0 +1,66 @@
+#!/sbin/sh
+
+. "$env"
+
+print "Installing ramdisk..."
+
+cd $tmp/ramdisk
+
+rm -f init
+cp $tmp/ramdiskres/init ./
+chmod 0755 init
+
+rm -f init.at.dl.rc
+cp $tmp/ramdiskres/init.at.dl.rc ./
+chmod 0755 init.at.dl.rc
+
+rm -f init.at.rc
+cp $tmp/ramdiskres/init.at.rc ./
+chmod 0755 init.at.rc
+
+rm -f init.environ.rc
+cp $tmp/ramdiskres/init.environ.rc ./
+chmod 0755 init.environ.rc
+
+rm -f init.factory.rc
+cp $tmp/ramdiskres/init.factory.rc ./
+chmod 0755 init.factory.rc
+
+rm -f init.qcom.dl.rc
+cp $tmp/ramdiskres/init.qcom.dl.rc ./
+chmod 0755 init.qcom.dl.rc
+
+rm -f init.rc
+cp $tmp/ramdiskres/init.rc ./
+chmod 0755 init.rc
+
+rm -f init.target.dl.rc
+cp $tmp/ramdiskres/init.target.dl.rc ./
+chmod 0755 init.target.dl.rc
+
+rm -f init.usb.configfs.rc
+cp $tmp/ramdiskres/init.usb.configfs.rc ./
+chmod 0755 init.usb.configfs.rc
+
+rm -f init.usb.rc
+cp $tmp/ramdiskres/init.usb.rc ./
+chmod 0755 init.usb.rc
+
+rm -f init.vivo.rc
+cp $tmp/ramdiskres/init.vivo.rc ./
+chmod 0755 init.vivo.rc
+
+rm -f init.zygote32.rc
+cp $tmp/ramdiskres/init.zygote32.rc ./
+chmod 0755 init.zygote32.rc
+
+rm -f init.zygote64_32.rc
+cp $tmp/ramdiskres/init.zygote64_32.rc ./
+chmod 0755 init.zygote64_32.rc
+
+rm -f ueventd.rc
+cp $tmp/ramdiskres/ueventd.rc ./
+chmod 0755 ueventd.rc
+
+
+exit 0

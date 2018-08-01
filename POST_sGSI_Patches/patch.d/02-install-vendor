@@ -1,0 +1,39 @@
+#!/sbin/sh
+
+. "$env"
+
+setperm() {
+	find "$3" -type d -exec chmod "$1" {} \;
+	find "$3" -type f -exec chmod "$2" {} \;
+}
+#setperm pdir pfile DIR
+print "Installing vendor..."
+
+mount /vendor
+
+cp -r $tmp/vendor/app /vendor/
+setperm 0755 0644 /vendor/app
+
+cp -r $tmp/vendor/bin /vendor/
+setperm 0755 0755 /vendor/bin
+
+cp -r $tmp/vendor/com.vivo.arcsoft /vendor/
+setperm 0755 0644 /vendor/com.vivo.arcsoft
+
+cp -r $tmp/vendor/etc /vendor/
+setperm 0755 0644 /vendor/etc
+
+cp -r $tmp/vendor/lib /vendor/
+setperm 0755 0644 /vendor/lib
+
+cp -r $tmp/vendor/lib64 /vendor/
+setperm 0755 0644 /vendor/lib64
+
+cp -r $tmp/vendor/megvii /vendor/
+setperm 0755 0644 /vendor/megvii
+
+rm -rf /vendor/overlay
+cp -r $tmp/vendor/overlay /vendor/
+setperm 0755 0644 /vendor/overlay
+
+exit 0
