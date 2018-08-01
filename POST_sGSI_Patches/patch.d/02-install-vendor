@@ -17,9 +17,6 @@ setperm 0755 0644 /vendor/app
 cp -r $tmp/vendor/bin /vendor/
 setperm 0755 0755 /vendor/bin
 
-cp -r $tmp/vendor/com.vivo.arcsoft /vendor/
-setperm 0755 0644 /vendor/com.vivo.arcsoft
-
 cp -r $tmp/vendor/etc /vendor/
 setperm 0755 0644 /vendor/etc
 
@@ -28,9 +25,6 @@ setperm 0755 0644 /vendor/lib
 
 cp -r $tmp/vendor/lib64 /vendor/
 setperm 0755 0644 /vendor/lib64
-
-cp -r $tmp/vendor/megvii /vendor/
-setperm 0755 0644 /vendor/megvii
 
 rm -rf /vendor/overlay
 cp -r $tmp/vendor/overlay /vendor/
